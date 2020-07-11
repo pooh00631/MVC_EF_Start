@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Appointment
+@{
     Layout = null;
 }
 
@@ -11,5 +12,10 @@
 </head>
 <body>
   <h2>Database operations successful</h2>
+
+    <table>
+        <tr><th>Appointment time</th></tr>
+        <tr><th>@Model.time</th></tr>
+    </table>
 </body>
 </html>

@@ -1,15 +1,20 @@
-﻿@{
-  Layout = null;
+﻿@model Appointment
+
+@{
+    Layout = null;
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-  <meta name="viewport" content="width=device-width" />
-  <title>LINQOperations</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>LINQOperations</title>
 </head>
 <body>
-  <h2>LINQ operations successful</h2>
+    <h2>LINQ operations successful</h2>
+    Appointment ID: @Model.apptID <br />
+    Appointment Date: @Model.date <br />
+    Appointment Time: @Model.time
 </body>
 </html>

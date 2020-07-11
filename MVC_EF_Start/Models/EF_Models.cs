@@ -3,38 +3,38 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MVC_EF_Start.Models
 {
-  public class Company
+  public class Doctor
   {
     [Key]
-    public string symbol { get; set; }
+    public int docID { get; set; }
     public string name { get; set; }
-    public string date { get; set; }
-    public bool isEnabled { get; set; }
-    public string type { get; set; }
-    public string iexId { get; set; }
-    public List<Quote> Quotes { get; set; }
+    public string speciality { get; set; }
+    public bool isActive { get; set; }
+    public List<Appointment> appointments { get; set; }
   }
 
-  public class Quote
+  public class Patient
   {
-    public int QuoteId { get; set; }
-    public string date { get; set; }
-    public float open { get; set; }
-    public float high { get; set; }
-    public float low { get; set; }
-    public float close { get; set; }
-    public int volume { get; set; }
-    public int unadjustedVolume { get; set; }
-    public float change { get; set; }
-    public float changePercent { get; set; }
-    public float vwap { get; set; }
-    public string label { get; set; }
-    public float changeOverTime { get; set; }
-    public string symbol { get; set; }
-  }
+    [Key]
+    public int patId { get; set; }
+    public string patName { get; set; }
+    public string dob { get; set; }
+    List<Appointment> appointments { get; set; }
+      }
 
-  public class ChartRoot
+    public class Appointment
+    {
+        [Key]
+        public int apptID { get; set; }
+        public string date { get; set; }
+        public string time { get; set; }
+        
+        public Doctor doctor { get; set; }
+        public Patient patient { get; set; }
+
+    }
+    public class ChartRoot
   {
-    public Quote[] chart { get; set; }
+    //public Quote[] chart { get; set; }
   }
 }
