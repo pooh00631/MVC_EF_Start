@@ -92,11 +92,11 @@ namespace MVC_EF_Start.Controllers
 
             Appointment PatientRead = dbContext.Appointments
                                     .Include(c => c.patient)
-                                    .Where(c => c.apptID == 1)
+                                    .Where(c => c.apptID == 2)
                                     .FirstOrDefault();
 
 
-            return View(AppointmentRead2);
+            return View(PatientRead);
     }
 
   }
